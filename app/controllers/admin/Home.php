@@ -4,12 +4,11 @@
    };
 ?>
 
-
 <?php 
    class Home extends Controller {
       public function index() {
          
-         $QuizzArr = $this->model('QuizzModel')->table('quizz')->get();
+         $QuizzArr = $this->model('QuizzModel')->table('quizz')->where('host', '=', $_SESSION['id'])->get();
          $TopicArr = $this->model('TopicModel')->table('topic')->get();
          
          $this->data['content'] = 'contents/admin/library';

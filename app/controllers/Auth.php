@@ -7,6 +7,8 @@
                   if (!empty($row)) {
                         if ($row['password'] == $_POST['password']) {
                               $_SESSION['user'] = $row['firstName'] . ' ' . $row['lastName'];
+                              $_SESSION['image'] = $row['image'];
+                              $_SESSION['id'] = $row['userID'];
                               $data = array (
                                     'status' => 200,
                                     'message' => 'Login successfully !'

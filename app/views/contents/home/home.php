@@ -7,6 +7,19 @@
              </div>
          </div>
          <div class="ms:col-span-1 md:col-span-1 lg:col-span-1 rounded-2xl border-2 border-gray-300 bg-white flex items-center justify-center" style="height:220px">
+               <?php 
+                  if (isset($_SESSION['user'])) {
+                    ?>
+                       <img class="rounded-full" width="50" src="<?= _WEB_ROOT.'/public/images/'.$_SESSION['image']?>" alt="hinh dai dien"/>
+                       <span class="ml-3 font-medium"><?=$_SESSION['user']?></span>
+                    <?php
+                  } else {
+                    ?>
+                        <span class="px-3 py-1 bg-gray-400 ml-2 hover:opacity-80 cursor-pointer text-white rounded-md" onClick="showLogin()">Log In</span>
+                        <span class="px-3 py-1 bg-gray-400 ml-2 hover:opacity-80 cursor-pointer text-white rounded-md" onClick="showSignUp()">Sign up</span>
+                    <?php
+                  }
+               ?>
          </div>
      </div>
     <div class="grid grid-cols-6 gap-4">
@@ -17,9 +30,14 @@
                         <div class="col-span-1 mt-5">
                                 <a href="<?php echo _WEB_ROOT .'/playQuizz/readyQuizz/'. $item['quizzID']?>" class="col-span-1 h-60 grid grid-rows-5 rounded-xl overflow-hidden border-2 border-gray-300 bg-white hover:opacity-80 hover:cursor-pointer hover:scale-105" style="animation: all 10s ease;">
                                     <img class="w-full h-full row-span-2  object-cover bg-center" src="<?=_WEB_ROOT . '/public/images/' . $item['quizz_image'] ?>" alt="">
-                                    <div class="row-span-3 grid grid-rows-5 p-2">
+                                    <div class="row-span-3 grid grid-rows-7 p-2">
                                             <h1 class="row-span-2 w-full font-bold text-black"><?= $item['quizzName'] ?></h1>
-                                            <span class="row-span-2 text-sm text-black">by:(FPL Ngoc)</span>
+                                            <div class="flex row-span-2 items-center">
+                                                <div class="w-12 h-12 flex items-center rounded-full overflow-hidden">
+                                                      <img class="object-cover" width="100%" height="100%" src="<?=_WEB_ROOT . '/public/images/' . $item['image']?>" alt="">
+                                                </div>
+                                                <span class="ml-2 text-sm text-black"><?= $item['firstName'] . ' ' . $item['lastName']?></span>
+                                            </div>
                                             <button class="row-span-1 w-full bg-yellow-300 rounded-xl text-black">100% accuracy</button>
                                     </div>
                                 </a>
@@ -81,7 +99,7 @@
                   </div>
                   <div class="flex items-center justify-center py-5">
                     <span>Already have ana account?</span>
-                    <button class="bg-purple-100 text-purple-800 py-2 px-3 rounded-lg ml-3" onclick="showLogin()">Log In</button>
+                    <button class="bg-purple-100 text-purple-800 py-2 px-3 rounded-lg ml-3" onClick="showLogin()">Log In</button>
                   </div>
                </div>
             </div>

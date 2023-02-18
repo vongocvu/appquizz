@@ -15,12 +15,11 @@
                   <?php 
                     if (isset($_SESSION['user'])) {
                         ?> 
-                          <a href="<?=_WEB_ROOT?>/admin/home" target="_blank" class="h-10 bg-gray-200 px-8 flex items-center cursor-pointer text-gray-800 no-underline">
+                          <a href="<?=_WEB_ROOT?>/admin/home" target="_blank" class="h-10 bg-gray-200 px-8 flex items-center cursor-pointer text-gray-800 no-underline ml-3">
                               <i class="fa-solid fa-screwdriver-wrench pr-2"></i> 
                               Admin Dashboard
                         </a>
-                        <a href="<?=_WEB_ROOT?>/auth/logout" class="h-10 bg-gray-200 px-8 flex items-center cursor-pointer text-gray-800 no-underline">
-                              <i class="fa-solid fa-screwdriver-wrench pr-2"></i> 
+                        <a href="<?=_WEB_ROOT?>/auth/logout" class="h-10 bg-gray-200 px-8 flex items-center cursor-pointer text-gray-800 no-underline ml-3">
                               Logout
                         </a>
                         <?php 

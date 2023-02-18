@@ -24,9 +24,9 @@ if (!empty($quizz)) {
                                     </div>
                                     <div class="flex justify-between items-center p-4">
                                           <div class="flex items-center">
-                                                <img class="rounded-full w-10 h-10 mr-2" src="https://lh3.googleusercontent.com/a/AEdFTp4isGNzAW5ciRUVW83gb5azSWdXVOSepOl6A5uXyA=s96-c" alt="">
+                                                <img class="rounded-full w-10 h-10 mr-2" src="<?=_WEB_ROOT . '/public/images/'.$_SESSION['image']?>" alt="">
                                                 <div class="">
-                                                      <span class="text-sm">Nguyen Linh</span>
+                                                      <span class="text-sm"><?=$_SESSION['user']?></span>
                                                       <p class="m-0 text-xs">6 months</p>
                                                 </div>
                                           </div>
